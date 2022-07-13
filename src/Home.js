@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { React, useState, useEffect } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -120,6 +121,90 @@ const useStyles = createStyles((theme) => ({
     maxWidth: 480,
     marginRight: theme.spacing.xl * 3,
 
+=======
+import { React, useState, useEffect, useHistory } from "react";
+import { shallowEqual, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setUser, selectUsername } from "./userSlice";
+import { useRef } from "react";
+import dayjs from "dayjs";
+
+// Mantine UI Imports
+import {
+  createStyles,
+  Image,
+  Container,
+  Title,
+  Button,
+  Group,
+  Text,
+  List,
+  ThemeIcon,
+  Transition,
+  Box,
+  Paper,
+  Progress,
+  THEME_ICON_SIZES,
+  MultiSelect,
+  Stack,
+} from "@mantine/core";
+import { Check, InfoCircle, Webhook, WorldLatitude } from "tabler-icons-react";
+import image from "./image.svg";
+import { ActionIcon, useMantineColorScheme } from "@mantine/core";
+import { Sun, MoonStars } from "tabler-icons-react";
+import { Header, Burger, Center } from "@mantine/core";
+import { useBooleanToggle, useSetState } from "@mantine/hooks";
+import {
+  BrandTwitter,
+  BrandYoutube,
+  BrandInstagram,
+  HeartMinus,
+  TiltShift,
+} from "tabler-icons-react";
+import Theme from "./Theme";
+import { Avatar } from "@mantine/core";
+import { Notification } from "@mantine/core";
+import { X } from "tabler-icons-react";
+import { showNotification } from "@mantine/notifications";
+import { CircleCheck, CircleDashed } from "tabler-icons-react";
+import { SimpleGrid } from "@mantine/core";
+import { Divider } from "@mantine/core";
+import { Timeline } from "@mantine/core";
+import { DateRangePicker } from "@mantine/dates";
+import { TimeInput } from "@mantine/dates";
+import { TimeRangeInput } from "@mantine/dates";
+import { Clock } from "tabler-icons-react";
+import { Calendar } from "tabler-icons-react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { useListState } from "@mantine/hooks";
+
+// Login Imports
+import { GoogleLogin } from "@react-oauth/google";
+import { useGoogleOneTapLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
+
+// Image imports
+import logoLight from "./images/logoLight.png";
+import logoDark from "./images/logoDark.png";
+import backgroundLight from "./images/test.png";
+import backgroundDark from "./images/image.png";
+
+const useStyles = createStyles((theme) => ({
+  inner: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  },
+
+  content: {
+    maxWidth: 480,
+    marginRight: theme.spacing.xl * 3,
+
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
       marginRight: 0,
@@ -215,6 +300,7 @@ function navigate(href, newTab) {
 }
 
 const Home = () => {
+<<<<<<< HEAD
   const history = useHistory();
 
   const [pointsProvider, setPointsProvider] = usePointsContext();
@@ -226,6 +312,11 @@ const Home = () => {
 
   const [mountDouble, setMountDouble] = useState(false);
 
+=======
+  const user = useSelector(selectUsername);
+  const dispatch = useDispatch();
+
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
   const { classes, cx } = useStyles();
@@ -242,6 +333,7 @@ const Home = () => {
 
   const [days, setDays] = useState([]);
 
+<<<<<<< HEAD
   const [active, setActive] = useState(1);
   const nextStep = () =>
     setActive((current) => (current < 3 ? current + 1 : current));
@@ -264,6 +356,8 @@ const Home = () => {
     fetchUserName();
   }, [User, loading]);
 
+=======
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const [Form, setForm] = useState({
     Buttons: {
       informatica: {
@@ -726,7 +820,11 @@ const Home = () => {
           <div>
             <Text>{item.name}</Text>
             <Text color="dimmed" size="sm">
+<<<<<<< HEAD
               Dificultate: {item.position} • Capitole: {item.mass}
+=======
+              Dificultate: {item.position} • Capitole: {item.mass} testing{" "}
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
             </Text>
           </div>
         </div>
@@ -799,6 +897,21 @@ const Home = () => {
       ["Ioan Slavici", "Ion Creanga", "Mihai Eminescu", "Ion Luca Caragiale"],
       2
     ),
+<<<<<<< HEAD
+=======
+    new Intrebare(
+      "Romana",
+      "Marii Clasici",
+      'Poemul "Luceafărul" apare pentru prima dată:',
+      [
+        "la București",
+        "la Timisoara, în anul 1883",
+        'la Viena, în Almanahul societății academice social-literare "România jună"',
+        'în revista "Convorbiri literare" din Iași',
+      ],
+      3
+    ),
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   ];
 
   var intrebariMatematica = [
@@ -849,7 +962,11 @@ const Home = () => {
     ),
     new Intrebare(
       "Informatica",
+<<<<<<< HEAD
       "Granfuri",
+=======
+      "Grafuri",
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
       "Numim pădure un graf neorientat în care fiecare componentă conexă a sa este un arbore. Orice pădure cu cel putin doi arbori este un graf care:",
       [
         "Are cicluri şi este conex",
@@ -1323,6 +1440,7 @@ const Home = () => {
       }
     }
 
+<<<<<<< HEAD
     sleep(500).then(() => {
       resetButtons();
       var numarIntrebari = 0;
@@ -1343,6 +1461,11 @@ const Home = () => {
       }
       console.log("CURRINTREBARE: ", currIntrebare);
       console.log("NUMARINTREBARI: ", numarIntrebari);
+=======
+    sleep(2000).then(() => {
+      resetButtons();
+      setCurrIntrebare((prev) => prev + 1);
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
     });
   }
 
@@ -1492,6 +1615,7 @@ const Home = () => {
       </DragDropContext>
     </>,
     <>
+<<<<<<< HEAD
       <Title order={3}>Atenție</Title>
       <Text>
         Următorul pas este testul. După ce vei apăsa butonul de mai jos, nu te
@@ -1500,6 +1624,8 @@ const Home = () => {
       </Text>
     </>,
     <>
+=======
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
       <Title order={3}>{intrebariFinal[currIntrebare].materie}</Title>
       <Text color="dimmed">{intrebariFinal[currIntrebare].capitol}</Text>
       <Paper shadow="xl" p="md" withBorder>
@@ -1543,6 +1669,7 @@ const Home = () => {
         </Stack>
       </Center>
     </>,
+<<<<<<< HEAD
     <>
       <Title>Felicitari!</Title>
       <Text>
@@ -1550,6 +1677,8 @@ const Home = () => {
         treia ne vom ocupa noi.
       </Text>
     </>,
+=======
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   ];
 
   return (
@@ -1567,11 +1696,18 @@ const Home = () => {
           <div className={classes.inner}>
             <div className={classes.content}>
               <Title className={classes.title}>
+<<<<<<< HEAD
                 Edu
                 <span className={classes.highlight}>Vision</span> <br />{" "}
               </Title>
               <Text color="dimmed" mt="md">
                 Generează orare de învățare pentru elevi în 3 pași simpli
+=======
+                Edu<span className={classes.highlight}>Vision</span> <br />{" "}
+              </Title>
+              <Text color="dimmed" mt="md">
+                Generează orare de învățare pentru Bacalaureat în 3 pași simpli
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
               </Text>
               <List
                 spacing="xs"
@@ -1617,12 +1753,16 @@ const Home = () => {
                       document
                         .getElementById("second")
                         .scrollIntoView({ behavior: "smooth" });
+<<<<<<< HEAD
                       setPointsProvider(true);
+=======
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                     }}
                   >
                     Get started
                   </Button>
                 ) : (
+<<<<<<< HEAD
                   <>
                     <Button
                       leftIcon={
@@ -1660,6 +1800,40 @@ const Home = () => {
                       Sign in with Google
                     </Button>
                   </>
+=======
+                  <GoogleLogin
+                    theme={dark ? "filled_black" : "filled_light"}
+                    shape="pill"
+                    onSuccess={(credentialResponse) => {
+                      var decoded = jwt_decode(credentialResponse.credential);
+                      console.log(decoded.email);
+                      setLoggedin(true);
+                      dispatch(
+                        setUser({
+                          name: decoded.name,
+                          email: decoded.email,
+                          picture: decoded.picture,
+                        })
+                      );
+                      showNotification({
+                        id: "hello-there",
+                        disallowClose: false,
+                        autoClose: 3000,
+                        title: "Logged In",
+                        message:
+                          "You logged in successfully as " + decoded.name,
+                        color: "teal",
+                        icon: <Check size={18} />,
+                        className: "my-notification-class",
+                        loading: false,
+                      });
+                    }}
+                    onError={() => {
+                      console.log("Login Failed");
+                    }}
+                    useOneTap
+                  />
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                 )}
 
                 <Button
@@ -1669,8 +1843,14 @@ const Home = () => {
                   className={classes.control}
                   onClick={() => {
                     if (!loggedin) {
+<<<<<<< HEAD
                       setMountDouble(true);
                       scrollIntoView({ alignment: "center" });
+=======
+                      document
+                        .getElementById("second")
+                        .scrollIntoView({ behavior: "smooth" });
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                     } else {
                       navigate("https://github.com/", true);
                     }
@@ -1683,6 +1863,10 @@ const Home = () => {
             <Image src={image} className={classes.image} />
           </div>
         </Container>
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
         <Container style={{ paddingTop: "80vh" }}>
           <SimpleGrid
             cols={3}
@@ -1713,8 +1897,13 @@ const Home = () => {
                   fill="currentColor"
                   strokeWidth="0"
                   viewBox="0 0 512 512"
+<<<<<<< HEAD
                   height="2em"
                   width="2em"
+=======
+                  height="1em"
+                  width="1em"
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M463 192H315.9L271.2 58.6C269 52.1 262.9 48 256 48s-13 4.1-15.2 10.6L196.1 192H48c-8.8 0-16 7.2-16 16 0 .9.1 1.9.3 2.7.2 3.5 1.8 7.4 6.7 11.3l120.9 85.2-46.4 134.9c-2.3 6.5 0 13.8 5.5 18 2.9 2.1 5.6 3.9 9 3.9 3.3 0 7.2-1.7 10-3.6l118-84.1 118 84.1c2.8 2 6.7 3.6 10 3.6 3.4 0 6.1-1.7 8.9-3.9 5.6-4.2 7.8-11.4 5.5-18L352 307.2l119.9-86 2.9-2.5c2.6-2.8 5.2-6.6 5.2-10.7 0-8.8-8.2-16-17-16z"></path>
@@ -1725,8 +1914,13 @@ const Home = () => {
                   strokeWidth="0"
                   viewBox="0 0 512 512"
                   className="-ml-1"
+<<<<<<< HEAD
                   height="2em"
                   width="2em"
+=======
+                  height="1em"
+                  width="1em"
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M463 192H315.9L271.2 58.6C269 52.1 262.9 48 256 48s-13 4.1-15.2 10.6L196.1 192H48c-8.8 0-16 7.2-16 16 0 .9.1 1.9.3 2.7.2 3.5 1.8 7.4 6.7 11.3l120.9 85.2-46.4 134.9c-2.3 6.5 0 13.8 5.5 18 2.9 2.1 5.6 3.9 9 3.9 3.3 0 7.2-1.7 10-3.6l118-84.1 118 84.1c2.8 2 6.7 3.6 10 3.6 3.4 0 6.1-1.7 8.9-3.9 5.6-4.2 7.8-11.4 5.5-18L352 307.2l119.9-86 2.9-2.5c2.6-2.8 5.2-6.6 5.2-10.7 0-8.8-8.2-16-17-16z"></path>
@@ -1737,8 +1931,13 @@ const Home = () => {
                   strokeWidth="0"
                   viewBox="0 0 512 512"
                   className="-ml-1"
+<<<<<<< HEAD
                   height="2em"
                   width="2em"
+=======
+                  height="1em"
+                  width="1em"
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M463 192H315.9L271.2 58.6C269 52.1 262.9 48 256 48s-13 4.1-15.2 10.6L196.1 192H48c-8.8 0-16 7.2-16 16 0 .9.1 1.9.3 2.7.2 3.5 1.8 7.4 6.7 11.3l120.9 85.2-46.4 134.9c-2.3 6.5 0 13.8 5.5 18 2.9 2.1 5.6 3.9 9 3.9 3.3 0 7.2-1.7 10-3.6l118-84.1 118 84.1c2.8 2 6.7 3.6 10 3.6 3.4 0 6.1-1.7 8.9-3.9 5.6-4.2 7.8-11.4 5.5-18L352 307.2l119.9-86 2.9-2.5c2.6-2.8 5.2-6.6 5.2-10.7 0-8.8-8.2-16-17-16z"></path>
@@ -1749,8 +1948,13 @@ const Home = () => {
                   strokeWidth="0"
                   viewBox="0 0 512 512"
                   className="-ml-1"
+<<<<<<< HEAD
                   height="2em"
                   width="2em"
+=======
+                  height="1em"
+                  width="1em"
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M463 192H315.9L271.2 58.6C269 52.1 262.9 48 256 48s-13 4.1-15.2 10.6L196.1 192H48c-8.8 0-16 7.2-16 16 0 .9.1 1.9.3 2.7.2 3.5 1.8 7.4 6.7 11.3l120.9 85.2-46.4 134.9c-2.3 6.5 0 13.8 5.5 18 2.9 2.1 5.6 3.9 9 3.9 3.3 0 7.2-1.7 10-3.6l118-84.1 118 84.1c2.8 2 6.7 3.6 10 3.6 3.4 0 6.1-1.7 8.9-3.9 5.6-4.2 7.8-11.4 5.5-18L352 307.2l119.9-86 2.9-2.5c2.6-2.8 5.2-6.6 5.2-10.7 0-8.8-8.2-16-17-16z"></path>
@@ -1761,8 +1965,13 @@ const Home = () => {
                   strokeWidth="0"
                   viewBox="0 0 512 512"
                   className="-mx-1"
+<<<<<<< HEAD
                   height="2em"
                   width="2em"
+=======
+                  height="1em"
+                  width="1em"
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M463 192H315.9L271.2 58.6C269 52.1 262.9 48 256 48s-13 4.1-15.2 10.6L196.1 192H48c-8.8 0-16 7.2-16 16 0 .9.1 1.9.3 2.7.2 3.5 1.8 7.4 6.7 11.3l120.9 85.2-46.4 134.9c-2.3 6.5 0 13.8 5.5 18 2.9 2.1 5.6 3.9 9 3.9 3.3 0 7.2-1.7 10-3.6l118-84.1 118 84.1c2.8 2 6.7 3.6 10 3.6 3.4 0 6.1-1.7 8.9-3.9 5.6-4.2 7.8-11.4 5.5-18L352 307.2l119.9-86 2.9-2.5c2.6-2.8 5.2-6.6 5.2-10.7 0-8.8-8.2-16-17-16z"></path>
@@ -1773,7 +1982,11 @@ const Home = () => {
           </SimpleGrid>
         </Container>
       </div>
+<<<<<<< HEAD
       <div className="second" id="second" ref={targetRef}>
+=======
+      <div className="second" id="second">
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
         {!loggedin ? (
           <Container>
             <Title order={3} style={{ paddingTop: "2rem" }}>
@@ -1812,6 +2025,7 @@ const Home = () => {
         ) : (
           <>
             <Center style={{ paddingTop: "2rem" }}>
+<<<<<<< HEAD
               <Paper radius="md" p="md" withBorder>
                 <Stepper
                   active={active}
@@ -1843,18 +2057,36 @@ const Home = () => {
               >
                 {contents[pas]}
                 {showBack && pas != 6 && pas != 7 ? (
+=======
+              <Progress
+                radius="md"
+                size="xl"
+                value={progress}
+                style={{ width: "30rem" }}
+                label={`${progress}%`}
+              />
+            </Center>
+
+            <Center style={{ paddingTop: "2rem" }}>
+              <Paper shadow="xl" p="md" withBorder style={{ width: "22rem" }}>
+                {contents[pas]}
+                {showBack ? (
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                   <Button
                     variant="light"
                     mt="1rem"
                     mr="sm"
                     color="red"
                     onClick={() => {
+<<<<<<< HEAD
                       if (pas == 6) {
                         prevStep();
                       }
                       if (pas == 4) {
                         prevStep();
                       }
+=======
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
                       setPas(pas - 1);
                       setProgress(progress - 10);
                     }}
@@ -1862,6 +2094,7 @@ const Home = () => {
                     Back
                   </Button>
                 ) : null}
+<<<<<<< HEAD
                 {pas != 6 ? (
                   <Button
                     onClick={() => {
@@ -1910,11 +2143,41 @@ const Home = () => {
                       : "Next"}
                   </Button>
                 ) : null}
+=======
+
+                <Button
+                  onClick={() => {
+                    setProgress(progress + 10);
+                    setPas(pas + 1);
+                    console.log(value);
+                    setShowBack(true);
+                    console.log(days);
+                    console.log(date);
+                    if (pas == 4) {
+                      setTrans(true);
+                      SetMaterii(materie3);
+                    }
+                    if (pas == 5) {
+                      console.log("GRESITE : ", Gresite);
+                    }
+                    console.log("PAS: ", pas);
+                    console.log("MATERIE 1 : ", materie1);
+                    console.log("MATERIE 2 : ", materie2);
+                    console.log("MATERIE 3 : ", materie3);
+                    console.log("INTREBARI: ", intrebariFinal);
+                  }}
+                  variant="light"
+                  mt="1rem"
+                >
+                  Next
+                </Button>
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
               </Paper>
             </Center>
           </>
         )}
       </div>
+<<<<<<< HEAD
       {!loggedin ? (
         <div
           className="third"
@@ -1931,6 +2194,8 @@ const Home = () => {
           <FeaturesImages />
         </div>
       ) : null}
+=======
+>>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
     </div>
   );
 };
