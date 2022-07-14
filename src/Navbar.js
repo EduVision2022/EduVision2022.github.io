@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useContext } from "react";
-=======
-import React, { useState, useEffect } from "react";
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 import { useHistory } from "react-router-dom";
 import {
   createStyles,
@@ -39,7 +35,6 @@ import {
   ChevronUp,
 } from "tabler-icons-react";
 import { SquareCheck, Package, Users, Calendar } from "tabler-icons-react";
-<<<<<<< HEAD
 import { Logout } from "tabler-icons-react";
 import { CalendarEvent } from "tabler-icons-react";
 import { QuestionMark } from "tabler-icons-react";
@@ -56,10 +51,11 @@ import {
   signOut,
 } from "firebase/auth";
 import { Login } from "tabler-icons-react";
-
+import { Drawer } from "@mantine/core";
+import { Home2 } from "tabler-icons-react";
+import { AB } from "tabler-icons-react";
+import { PhoneOutgoing } from "tabler-icons-react";
 import UpdateContext from "./App";
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 
 // Redux
 import { shallowEqual, useSelector } from "react-redux";
@@ -69,18 +65,15 @@ import {
   selectUsername,
   selectPicture,
   selectEmail,
-<<<<<<< HEAD
   selectShouldUpdate,
   selectUser,
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 } from "./userSlice";
 
 // Images
 import logoLight from "./images/logoLight.png";
 import logoDark from "./images/logoDark.png";
+import { Stack } from "@mantine/core";
 
-<<<<<<< HEAD
 import { auth, SignInWithGoogle, logout } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { addDoc, getDocs } from "firebase/firestore";
@@ -95,8 +88,6 @@ import "./rgbFrame.css";
 // Providers
 import { usePointsContext } from "./points.tsx";
 
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 const useStyles = createStyles((theme) => ({
   user2: {
     backgroundColor: theme.colors.violet[6],
@@ -131,11 +122,7 @@ const useStyles = createStyles((theme) => ({
   links: {
     width: 260,
 
-<<<<<<< HEAD
     [theme.fn.smallerThan("md")]: {
-=======
-    [theme.fn.smallerThan("sm")]: {
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
       display: "none",
     },
   },
@@ -204,7 +191,6 @@ for (var i = 0; i <= 2; i++) {
 
 links[0] = new HeaderProps("/about", "About");
 links[1] = new HeaderProps("/contact", "Contact");
-<<<<<<< HEAD
 links[2] = new HeaderProps("/store", "Store");
 
 const logOut = () => {
@@ -218,28 +204,18 @@ export function HeaderMiddle() {
 
   const update = useContext(UpdateContext);
 
-=======
-links[2] = new HeaderProps("/login", "Login");
-
-export function HeaderMiddle() {
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const history = useHistory();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
   const [opened, toggleOpened] = useBooleanToggle(false);
-<<<<<<< HEAD
   const [active, setActive] = useState(null);
-=======
-  const [active, setActive] = useState(links[0].link);
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const { classes, cx } = useStyles();
   const theme = useMantineTheme();
 
   const username = useSelector(selectUsername);
   const profilepicture = useSelector(selectPicture);
   const email = useSelector(selectEmail);
-<<<<<<< HEAD
   const shouldUpdate = useSelector(selectShouldUpdate);
   const UserObject = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -299,24 +275,28 @@ export function HeaderMiddle() {
 
   if (pointsProvider) {
     fetchPuncte();
+    fetchUserName();
     setTimeout(() => {
       setPointsProvider(false);
     }, 1000);
   }
 
   const resetLogin = () => {
+    logout();
     logOut();
-    setLoggedIn(false);
-    setName("Guest");
-    setProfilepic("");
-    setMail("");
-    history.push("/");
+    setTimeout(() => {
+      setLoggedIn(false);
+      setName("Guest");
+      setProfilepic("");
+      setMail("");
+      setPuncte(0);
+      setMaxPoints(0);
+      setBoughtItems([]);
+      history.push("/logout");
+      logout();
+    }, 1000);
   };
 
-=======
-  const dispatch = useDispatch();
-
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const [windowDimension, detectHW] = useState({
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
@@ -337,7 +317,6 @@ export function HeaderMiddle() {
     };
   }, [windowDimension]);
 
-<<<<<<< HEAD
   const rewards = (puncte) => {
     return (
       <div className="status">
@@ -345,25 +324,23 @@ export function HeaderMiddle() {
           <Badge color="dark">Începător</Badge>
         ) : null}
         {maxPoints >= 100 && maxPoints < 200 ? (
-          <Badge style={{ color: "#a4a9b2" }}>Intermediar</Badge>
+          <Badge style={{ color: "#a4a9b2" }}>Ambiţios</Badge>
         ) : null}
         {maxPoints >= 200 && maxPoints < 300 ? (
-          <Badge color="teal">Semi-avansat</Badge>
+          <Badge color="teal">Expert</Badge>
         ) : null}
         {maxPoints >= 300 && maxPoints < 400 ? (
-          <Badge color="violet">Avansat</Badge>
+          <Badge color="violet">As</Badge>
         ) : null}
         {maxPoints >= 400 ? (
           <Badge color="yellow" leftSection={<Crown size={12} />} size="xs">
-            Legendă
+            Geniu
           </Badge>
         ) : null}
       </div>
     );
   };
 
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const items = links.map((link) => (
     <a
       key={link.label}
@@ -379,10 +356,7 @@ export function HeaderMiddle() {
       {link.label}
     </a>
   ));
-<<<<<<< HEAD
   console.log("current Pathname 👉️", window.location.hash);
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 
   return (
     <Header height={56}>
@@ -392,7 +366,99 @@ export function HeaderMiddle() {
           onClick={() => toggleOpened()}
           size="sm"
           className={classes.burger}
-        />
+        ></Burger>
+        <Drawer
+          opened={opened}
+          onClose={() => toggleOpened()}
+          padding="md"
+          size="sm"
+        >
+          {loggedIn ? (
+            <>
+              <Stack>
+                <Button
+                  leftIcon={<Home2 size={12} color={theme.colors.blue[6]} />}
+                  variant="light"
+                  onClick={() => {
+                    redirectTo("/");
+                  }}
+                >
+                  Acasă
+                </Button>
+                <Button
+                  leftIcon={<User size={12} color={theme.colors.orange[6]} />}
+                  variant="light"
+                  onClick={() => {
+                    redirectTo("/profile");
+                  }}
+                >
+                  Profile
+                </Button>
+                <Button
+                  leftIcon={
+                    <QuestionMark size={12} color={theme.colors.orange[6]} />
+                  }
+                  variant="light"
+                  onClick={() => {
+                    redirectTo("/intrebari");
+                  }}
+                >
+                  Întrebări
+                </Button>
+                <Button
+                  leftIcon={
+                    <CalendarEvent size={12} color={theme.colors.blue[6]} />
+                  }
+                  variant="light"
+                  onClick={() => {
+                    redirectTo("/orare");
+                  }}
+                >
+                  Orare
+                </Button>
+                <Button
+                  leftIcon={<AB size={12} color={theme.colors.blue[6]} />}
+                  variant="light"
+                  onClick={() => {
+                    redirectTo("/about");
+                  }}
+                >
+                  Despre
+                </Button>
+                <Button
+                  leftIcon={
+                    <PhoneOutgoing size={12} color={theme.colors.blue[6]} />
+                  }
+                  variant="light"
+                  onClick={() => {
+                    redirectTo("/contact");
+                  }}
+                >
+                  Contact
+                </Button>
+                <Button
+                  leftIcon={<Logout size={12} color={theme.colors.violet[6]} />}
+                  variant="light"
+                  onClick={() => {
+                    resetLogin();
+                  }}
+                >
+                  Log Out
+                </Button>
+              </Stack>
+            </>
+          ) : (
+            <Button
+              leftIcon={<Login size={12} color={theme.colors.blue[6]} />}
+              variant="light"
+              onClick={() => {
+                redirectTo("/");
+              }}
+            >
+              Log In
+            </Button>
+          )}
+        </Drawer>
         <Menu
           className={classes.user}
           control={
@@ -402,7 +468,6 @@ export function HeaderMiddle() {
               className={classes.user}
             >
               <Avatar
-<<<<<<< HEAD
                 src={user?.photoURL ? user.photoURL : null}
                 referrerpolicy="no-referrer"
                 radius="xl"
@@ -450,20 +515,6 @@ export function HeaderMiddle() {
                     </Text>
                   </Group>
                 ) : null}
-=======
-                src={profilepicture}
-                radius="xl"
-                style={{ marginRight: "10px" }}
-              />
-
-              <div style={{ flex: 1 }}>
-                <Text size="sm" weight={500}>
-                  {username ? username : "Guest"}
-                </Text>
-                <Text color="dimmed" size="xs">
-                  {email}
-                </Text>
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
               </div>
             </Button>
           }
@@ -471,7 +522,6 @@ export function HeaderMiddle() {
           placement="end"
           size="lg"
         >
-<<<<<<< HEAD
           {loggedIn ? (
             <>
               <Menu.Item
@@ -584,57 +634,6 @@ export function HeaderMiddle() {
               setActive(null);
             }}
           >
-=======
-          <Menu.Item
-            icon={<Package size={16} color={theme.colors.blue[6]} />}
-            rightSection={
-              <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-                Ctrl + P
-              </Text>
-            }
-          >
-            Project
-          </Menu.Item>
-          <Menu.Item
-            icon={<SquareCheck size={16} color={theme.colors.pink[6]} />}
-            rightSection={
-              <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-                Ctrl + T
-              </Text>
-            }
-          >
-            Task
-          </Menu.Item>
-          <Menu.Item
-            icon={<Users size={16} color={theme.colors.cyan[6]} />}
-            rightSection={
-              <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-                Ctrl + U
-              </Text>
-            }
-          >
-            Team
-          </Menu.Item>
-          <Menu.Item
-            icon={<Calendar size={16} color={theme.colors.violet[6]} />}
-            rightSection={
-              <Text size="xs" transform="uppercase" weight={700} color="dimmed">
-                Ctrl + E
-              </Text>
-            }
-          >
-            Event
-          </Menu.Item>
-        </Menu>
-
-        <Group className={classes.links} spacing={5}>
-          {items}
-        </Group>
-
-        {/* LOGO */}
-        {windowDimension.winWidth > 720 ? (
-          <Center style={{ width: 400, height: 200 }}>
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
             {dark ? (
               <img src={logoDark} width="48px" height="48px" />
             ) : (
@@ -647,7 +646,6 @@ export function HeaderMiddle() {
             </Text>
           </Center>
         ) : null}
-<<<<<<< HEAD
         {windowDimension.winWidth > 1080 ? (
           <>
             <Group
@@ -669,7 +667,7 @@ export function HeaderMiddle() {
           </>
         ) : null}
         {windowDimension.winWidth < 720 ? (
-          <Group position="right" style={{ marginLeft: "78vw" }}>
+          <Group position="right" style={{ marginLeft: "70vw" }}>
             <Theme />
           </Group>
         ) : (
@@ -677,22 +675,6 @@ export function HeaderMiddle() {
             <Theme />
           </Group>
         )}
-=======
-        <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
-            <BrandTwitter size={18} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <BrandYoutube size={18} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <BrandInstagram size={18} />
-          </ActionIcon>
-        </Group>
-        <Group position="right">
-          <Theme />
-        </Group>
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
       </Container>
     </Header>
   );

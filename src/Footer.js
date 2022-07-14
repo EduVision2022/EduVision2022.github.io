@@ -11,10 +11,7 @@ import { BrandTwitter, BrandYoutube, BrandInstagram } from "tabler-icons-react";
 import { useMantineTheme } from "@mantine/core";
 import { useMantineColorScheme } from "@mantine/core";
 import "./smallestPixel.css";
-<<<<<<< HEAD
 import { useHistory } from "react-router-dom";
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 
 // Images
 import logoLight from "./images/logoLight.png";
@@ -64,11 +61,8 @@ links[1] = new HeaderProps("/contact", "Contact");
 links[2] = new HeaderProps("/login", "Login");
 
 export function Footer() {
-<<<<<<< HEAD
   const history = useHistory();
 
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   const { classes } = useStyles();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
@@ -79,14 +73,10 @@ export function Footer() {
         key={link.label}
         href={link.link}
         sx={{ lineHeight: 1 }}
-<<<<<<< HEAD
         onClick={(event) => {
           event.preventDefault();
           history.push(link.link);
         }}
-=======
-        onClick={(event) => event.preventDefault()}
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
         size="sm"
       >
         {link.label}
@@ -97,16 +87,12 @@ export function Footer() {
   return (
     <div className={classes.footer}>
       <div className={classes.inner}>
-<<<<<<< HEAD
         <Center
           style={{}}
           onClick={() => {
             history.push("/");
           }}
         >
-=======
-        <Center style={{}}>
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
           {dark ? (
             <img src={logoDark} width="48px" height="48px" />
           ) : (
@@ -136,13 +122,7 @@ export function Footer() {
             style={{ fontFamily: "Smallest Pixel-7" }}
             className="strokeme"
             size="xs"
-<<<<<<< HEAD
           ></Text>
-=======
-          >
-            Made with ❤️ by speedy&sbn
-          </Text>
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
         </Group>
       </div>
     </div>

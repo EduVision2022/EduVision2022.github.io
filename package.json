@@ -19,37 +19,22 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.1",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "dayjs": "^1.11.3",
     "firebase": "^9.8.4",
-=======
-    "@types/jest": "^28.1.1",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.13",
-    "@types/react-dom": "^18.0.5",
-    "dayjs": "^1.11.3",
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-firebase-hooks": "^5.0.3",
-=======
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
     "react-redux": "^8.0.2",
     "react-router-dom": "^5.3.3",
     "react-scripts": "5.0.1",
     "tabler-icons-react": "^1.49.0",
-<<<<<<< HEAD
     "typescript": "^4.7.4",
-=======
-    "typescript": "^4.7.3",
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
     "web-vitals": "^2.1.4"
   },
   "scripts": {

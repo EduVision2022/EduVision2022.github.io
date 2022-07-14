@@ -1,5 +1,4 @@
 import "./App.css";
-<<<<<<< HEAD
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -11,21 +10,12 @@ import {
   ColorScheme,
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
-=======
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useState } from "react";
-import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { Provider } from "react-redux";
-import { NotificationsProvider } from "@mantine/notifications";
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
 
 // Components import
 import Home from "./Home";
 import Theme from "./Theme";
 import HeaderMiddle from "./Navbar";
 import store from "./store";
-<<<<<<< HEAD
 import Footer from "./Footer";
 import Generator from "./Generator";
 import NotFoundTitle from "./404Page";
@@ -36,9 +26,15 @@ import Profile from "./Profile.tsx";
 import About from "./About.tsx";
 import Contact from "./Contact.tsx";
 import Store from "./Store.tsx";
+import Login from "./Login.tsx";
+import Logout from "./Logout.tsx";
+
 import React from "react";
+
 // Providers
 import { PointsProvider } from "./points.tsx";
+import { RefreshProvider } from "./Refresh.tsx";
+
 import { createContext } from "react";
 export const UpdateContext = createContext();
 
@@ -56,16 +52,6 @@ function App() {
 
   const [update, setUpdate] = useState("Testing");
 
-=======
-import About from "./About";
-import Footer from "./Footer";
-
-function App() {
-  const [colorScheme, setColorScheme] = useState("light");
-  const toggleColorScheme = (value) =>
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
-
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
   return (
     <GoogleOAuthProvider clientId="659959791723-d4cg060bjtk048i427hmblvng5q6g7ne.apps.googleusercontent.com">
       <Router>
@@ -83,37 +69,30 @@ function App() {
           >
             <NotificationsProvider>
               <Provider store={store}>
-<<<<<<< HEAD
-                <PointsProvider>
-                  <div className="App">
-                    <UpdateContext.Provider value={update}>
-                      <HeaderMiddle update={update} />
-                      <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/about" component={About} />
-                        <Route path="/generator" component={Generator} />
-                        <Route exact path="/orare" component={Orare} />
-                        <Route exact path="/orare/view" component={View} />
-                        <Route path="/intrebari" component={Intrebari} />
-                        <Route path="/profile" component={Profile} />
-                        <Route path="/contact" component={Contact} />
-                        <Route path="/store" component={Store} />
-                        <Route path="*" component={NotFoundTitle} />
-                      </Switch>
-                      <Footer />
-                    </UpdateContext.Provider>
-                  </div>
-                </PointsProvider>
-=======
-                <div className="App">
-                  <HeaderMiddle />
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
-                  </Switch>
-                  <Footer />
-                </div>
->>>>>>> aa0ff6a16c6ccca56a29341ea542715462831a24
+                <RefreshProvider>
+                  <PointsProvider>
+                    <div className="App">
+                      <UpdateContext.Provider value={update}>
+                        <HeaderMiddle update={update} />
+                        <Switch>
+                          <Route exact path="/" component={Home} />
+                          <Route path="/about" component={About} />
+                          <Route path="/generator" component={Generator} />
+                          <Route exact path="/orare" component={Orare} />
+                          <Route exact path="/orare/view" component={View} />
+                          <Route path="/intrebari" component={Intrebari} />
+                          <Route path="/profile" component={Profile} />
+                          <Route path="/contact" component={Contact} />
+                          <Route path="/store" component={Store} />
+                          <Route path="/login" component={Login} />
+                          <Route path="/logout" component={Logout} />
+                          <Route path="*" component={NotFoundTitle} />
+                        </Switch>
+                        <Footer />
+                      </UpdateContext.Provider>
+                    </div>
+                  </PointsProvider>
+                </RefreshProvider>
               </Provider>
             </NotificationsProvider>
           </MantineProvider>
