@@ -1,70 +1,75 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+                  
+#   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![logo](https://user-images.githubusercontent.com/84127665/179267593-eeed3b2a-79ab-4d41-8be4-b1466f825af2.png)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Ce este EduVision
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+EduVision este un proiect care poate fi folosit de orice elev pentru a genera orare de învățare personalizate, cu rolul de a se îmbunătăți la materiile alese. EduVision nu numai că generează orarele elevilor, ci le permite să pună întrebări celorlalți membri înregistrați acolo unde nu se descurcă. Elevii sunt testați pentru a putea completa orele de învățare, iar dacă rezultatul este favorabil, aceștia vor fi recompensați cu puncte. Punctele pot fi folosite pentru a cumpăra diferite produse vizuale. De asemenea, există un sistem de recompense pe ranguri, care le atribuie elevilor un nivel în funcție de maximul de puncte pe care l-au dobândit.
 
-### `npm test`
+## Design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Web capture_15-7-2022_2083_localhost](https://user-images.githubusercontent.com/84127665/179273720-092a35c3-1f93-482a-b53c-cb8564a79f60.jpeg)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Pași de utilizare
+### Primul pas
+Primul pas constă în crearea unui cont, pentru a putea generara orare și pentru a putea accesa restul secțiunilor din site.
+### Generarea orarului
+Pentru a genera primul orar, trebuie să accesați secțiunea de jos a paginii Acasă. De acolo trebuie sa urmați pașii afișați pe ecran. Orarul generat poate fi salvat în contul dumneavoastră și poate fi accesat de la secțiunea "Orare".
+### Vizualizarea orarului
+Orarul generat anterior poate fi vizualizat în două modalități (Listă sau Calendar). În ambele modalități puteți vedea zilele, și orele din fiecare zi.
+### Completarea orelor 
+Pentru a completa orele, trebuie să selectați o zi în care sunt ore de învățare, si să apăsați pe Afișează Întrebările, iar după ce ați terminat testul, pe Completează Ora.
+### Punerea întrebărilor
+Pentru a pune o întrebare, trebuie să selectați o zi în care sunt ore de învățare, și să apăsați pe Pune o întrebare. Întrebarea va fi afișată la secțiunea Întrebari.
+### Răspunderea la întrebări
+Pentru a răspunde la întrebari, trebuie să accesați secțiunea Întrebări și să adăugați răspunsul la întrebarea dorită.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tehnologii
+EduVision este realiat în `ReactJS` si `TypeScript` pentru interfață, `Mantine` pentru design, `Redux` pentru stocarea locală a datelor, `FireBase` pentru baza de date si `Google API` pentru autentificare.
+Dupa logare, utilizatorul va ramane logat pana la delogarea manuala, chiar si daca browserul este restartat, datorira utilizarii hook-ului `getAuth` din FirebaseSDK.
+Site-ul are un timp de raspuns scazut, si server-ul pe care este hostat nu este solicitat deoarece request-urile si response-urile sunt optimizate astel incat acestea sa fie cat mai rare.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Descarcare
 
-### `npm run eject`
+Sursa poate fi descarcata cu `Git`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git clone https://github.com/NuapteBuna/eduvision.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Site-ul poate si vizitat la adresa [EduVision](https://eduvision2022.github.io/#/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Cerințe sistem
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Sistem de operare: Windows 7, Windows 8, Windows 8.1, Windows 10 sau mai recent.
+Procesor: Intel Pentium 4 sau mai recent.
+RAM: 4 GB (recomandat)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Bibliografie
+<ul>
+<li>https://reactjs.org/
+<li>https://redux.js.org/
+<li>https://www.typescriptlang.org/
+<li>https://firebase.google.com/
+<li>https://examende10.ro/
+<li>https://mantine.dev/
+<li>https://ui.mantine.dev/
+<li>https://console.cloud.google.com/
+<li>https://upb.ro/
+<li>https://www.ubbcluj.ro/ro/
+<li>https://www.tuiasi.ro/
+<li>https://www.svgator.com/create-svg
+<li>https://github.com/
+<li>https://code.visualstudio.com/
+<li>https://www.w3schools.com/
+<li>https://freefrontend.com/
+<li>https://stackoverflow.com/
+<li>https://nodejs.org/en/
+<li>https://www.npmjs.com/
+<li>https://www.heroku.com/
+</ul>
