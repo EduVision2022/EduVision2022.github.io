@@ -69,6 +69,7 @@ import backgroundLight from "./images/defaultLight.png";
 import backgroundDark from "./images/defaultDark.png";
 import backgroundLightInverted from "./images/invertedLight.png";
 import backgroundDarkInverted from "./images/invertedDark.png";
+import Artshow from "./images/testing2.png";
 
 import { auth, SignInWithGoogle, logout } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -305,8 +306,8 @@ const Home = () => {
   const [state, handlers] = useListState(data2);
 
   var data2 = [];
-  data2[0] = new Ora("1", "1.0079", "MT", "Matematică");
-  data2[1] = new Ora("2", "4.0026", "RM", "Română");
+  data2[0] = new Ora("3", "1", "MT", "Matematică");
+  data2[1] = new Ora("2", "1", "RM", "Română");
 
   const ToggleFormButton = (name) => {
     if (name == "informatica") {
@@ -328,7 +329,7 @@ const Home = () => {
         handlers.append(
           data2[0],
           data2[1],
-          new Ora("1", "1.0079", "I", "Informatică")
+          new Ora("3", "6", "I", "Informatică")
         );
         setMaterie3("informatica");
         setForm((prevForm) => ({
@@ -426,11 +427,7 @@ const Home = () => {
         handlers.pop();
         handlers.pop();
         handlers.pop();
-        handlers.append(
-          data2[0],
-          data2[1],
-          new Ora("1", "1.0079", "C", "Chimie")
-        );
+        handlers.append(data2[0], data2[1], new Ora("2", "1", "C", "Chimie"));
         setMaterie3("chimie");
         setForm((prevForm) => ({
           ...prevForm,
@@ -527,11 +524,7 @@ const Home = () => {
         handlers.pop();
         handlers.pop();
         handlers.pop();
-        handlers.append(
-          data2[0],
-          data2[1],
-          new Ora("1", "1.0079", "B", "Biologie")
-        );
+        handlers.append(data2[0], data2[1], new Ora("2", "1", "B", "Biologie"));
         setMaterie3("biologie");
         setForm((prevForm) => ({
           ...prevForm,
@@ -628,11 +621,7 @@ const Home = () => {
         handlers.pop();
         handlers.pop();
         handlers.pop();
-        handlers.append(
-          data2[0],
-          data2[1],
-          new Ora("1", "1.0079", "F", "Fizică")
-        );
+        handlers.append(data2[0], data2[1], new Ora("3", "2", "F", "Fizică"));
         setMaterie3("fizica");
         setForm((prevForm) => ({
           ...prevForm,
@@ -777,28 +766,28 @@ const Home = () => {
   var intrebariRomana = [
     new Intrebare(
       "Romana",
-      "Literatura",
+      "Literatură",
       'Cine este purtătorul mesajului moralizator al nuvelei "Moara cu Noroc" ',
       ["Lică Sămădăul", "Soacra lui Ghiță", "Ghiță", "Ana"],
       2
     ),
     new Intrebare(
       "Romana",
-      "Literatura",
+      "Literatură",
       'Ce tip de opera este "Povestea lui Harap-Alb"?',
       ["Basm", "Nuvelă", "Roman", "Comedie"],
       1
     ),
     new Intrebare(
       "Romana",
-      "Literatura",
+      "Literatură",
       "Cine a scris Floare Albastra?",
       ["Ion Creanga", "Ioan Slavici", "Mihai Eminescu", "Ion Pillat"],
       3
     ),
     new Intrebare(
       "Romana",
-      "Literatura",
+      "Literatură",
       'Cine a scris "Povestea lui Harap-Alb"?',
       ["Ioan Slavici", "Ion Creanga", "Mihai Eminescu", "Ion Luca Caragiale"],
       2
@@ -853,7 +842,7 @@ const Home = () => {
     ),
     new Intrebare(
       "Informatica",
-      "Granfuri",
+      "Grafuri",
       "Numim pădure un graf neorientat în care fiecare componentă conexă a sa este un arbore. Orice pădure cu cel putin doi arbori este un graf care:",
       [
         "Are cicluri şi este conex",
